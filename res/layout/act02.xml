@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".Activity01" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/main02"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView12"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1" >
+
+ 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/fio012"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:enabled="false"
+                android:ems="10"
+                android:hint="@string/fio"
+                android:inputType="textCapWords|textPersonName" />
+
+            <EditText
+                android:id="@+id/data2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:enabled="false"
+                android:ems="10"
+                android:hint="@string/date"
+                android:inputType="textCapWords|textPersonName" >
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/pol2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:enabled="false"
+                android:ems="10"
+                android:hint="@string/malefemale"
+                android:inputType="textCapWords|textPersonName" />
+
+             <EditText
+                 android:id="@+id/ed_dolzh2"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:clickable="false"
+                 android:enabled="false"
+                 android:ems="10"
+                 android:hint="@string/dolzh"
+                 android:inputType="textCapSentences|textMultiLine" >
+             </EditText>
+
+             <EditText
+                 android:id="@+id/ed_zarpl2"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:clickable="false"
+                 android:enabled="false"
+                 android:ems="10"
+                 android:hint="@string/zarpl"
+                 android:inputType="number" />
+
+             <TextView
+                 android:id="@+id/ph_number2"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:autoLink="phone"
+                 android:ems="10"
+                 android:enabled="false"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:hint="@string/ph_number" >
+
+             </TextView>
+
+             <TextView
+                 android:id="@+id/ed_mail2"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:autoLink="email"
+                 android:ems="10"
+                 android:enabled="false"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:hint="@string/email" />
+
+             <EditText
+                 android:id="@+id/letter"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:ems="10"
+                 android:hint="@string/letter"
+                 android:minLines="5"
+                 android:inputType="textMultiLine" >
+
+             </EditText>
+
+             <Button
+                 android:id="@+id/sendres"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/sendresponse"
+                 android:textStyle="bold" />
+            
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
