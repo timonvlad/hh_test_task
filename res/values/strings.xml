@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">hh_test_task</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="main01">РЕЗЮМЕ</string>
+    <string name="fio">Ф.И.О.</string>
+    <string name="date">Дата рождения:</string>
+    <string name="hello">Тестовое задание hh_school!!!</string>
+    <string name="malefemale">Пол:</string>
+    <string name="sendresume">ОТПРАВИТЬ РЕЗЮМЕ</string>
+    <string name="malefe_prompt">Выберите пол:</string>
+    <string-array name="malefe">
+        <item>Мужской</item>
+        <item>Женский</item>
+    </string-array>
+    <string name="dolzh">Занимаемая должность</string>
+    <string name="zarpl">Зарплата</string>
+    <string name="ph_number">Номер телефона</string>
+    <string name="email">Адрес электронной почты</string>
+
+</resources>
