@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,7 +22,13 @@ public class Activity02 extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		
 		setContentView(R.layout.act02);
+		
 		
 		
 		ed_name2 = (EditText) findViewById(R.id.fio012);
@@ -72,16 +80,29 @@ public class Activity02 extends Activity {
 				}else{
 				 returnIntent.putExtra("result", getResources().getString(R.string.error2act));
 				}
-				 setResult(RESULT_OK,returnIntent);     
+				 setResult(RESULT_OK,returnIntent);  
+
 				 finish();
 			}
 		});
 		
 	}
 
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		
+		overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+		
+	}
+	
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
+		
+		
+		
 	}
 	
 	

@@ -4,111 +4,129 @@
     android:layout_height="wrap_content"
     android:focusable="true"
     android:focusableInTouchMode="true"
+    android:background="@color/Wheat"
     tools:context=".Activity01" >
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/main01"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1" >
+        android:layout_alignParentLeft="true" >
 
- 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
-            
-             <EditText
-        android:id="@+id/fio01"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/fio"
-        android:inputType="textCapWords|textPersonName" >
 
+            <TextView
+                android:id="@+id/textView1"
+                style="@style/CodeFont"
+                android:text="@string/main01" />
+            <View
+   				 android:layout_width="fill_parent"
+   				 android:layout_height="2dp"
+   				 android:paddingTop="3dp"
+   				 android:paddingBottom="3dp"
+   				 android:background="@android:color/darker_gray"/>
 
-    </EditText>
+            <EditText
+                android:id="@+id/fio01"
+				style="@style/CodeFontEditText.fio"
+                android:hint="@string/fio" >
+            </EditText>
+ 			<View
+   				 android:layout_width="fill_parent"
+   				 android:layout_height="1dp"
+   				 android:paddingTop="3dp"
+   				 android:paddingBottom="3dp"
+   				 android:background="@android:color/darker_gray"/>
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/CodeFont.OtherTV"
+                android:text="@string/date" />
 
-             <TextView
-                 android:id="@+id/textView2"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:layout_gravity="center"
-                 android:text="@string/date"
-                 android:textAppearance="?android:attr/textAppearanceMedium" />
+            <DatePicker
+                android:id="@+id/datePicker1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+            <View
+   				 android:layout_width="fill_parent"
+   				 android:layout_height="1dp"
+   				 android:paddingTop="3dp"
+   				 android:paddingBottom="3dp"
+   				 android:background="@android:color/darker_gray"/>
 
-             <DatePicker
-                 android:id="@+id/datePicker1"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:layout_gravity="center" />
+            <TextView
+                android:id="@+id/TextView01"
+                style="@style/CodeFont.OtherTV"
+                android:text="@string/malefemale" />
 
-             <TextView
-                 android:id="@+id/TextView01"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:layout_gravity="center"
-                 android:text="@string/malefemale"
-                 android:textAppearance="?android:attr/textAppearanceMedium" />
+            <Spinner
+                android:id="@+id/mafe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/malefe"
+                android:prompt="@string/malefe_prompt" />
+            <View
+   				 android:layout_width="fill_parent"
+   				 android:layout_height="1dp"
+   				 android:paddingTop="3dp"
+   				 android:paddingBottom="3dp"
+   				 android:background="@android:color/darker_gray"/>
 
-             <Spinner
-                 android:id="@+id/mafe"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:entries="@array/malefe"
-                 android:prompt="@string/malefe_prompt" />
+            <EditText
+                android:id="@+id/ed_dolzh"
+				style="@style/CodeFontEditText.dolzh"
+                android:hint="@string/dolzh" >
+            </EditText>
+            <View
+   				 android:layout_width="fill_parent"
+   				 android:layout_height="1dp"
+   				 android:paddingTop="3dp"
+   				 android:paddingBottom="3dp"
+   				 android:background="@android:color/darker_gray"/>
 
-             <EditText
-                 android:id="@+id/ed_dolzh"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:ems="10"
-                 android:hint="@string/dolzh"
-                 android:inputType="textCapSentences|textMultiLine" >
-             </EditText>
+            <EditText
+                android:id="@+id/ed_zarpl"
+                style="@style/CodeFontEditText.zarpl"
+                android:hint="@string/zarpl"/>
+            <View
+   				 android:layout_width="fill_parent"
+   				 android:layout_height="1dp"
+   				 android:paddingTop="3dp"
+   				 android:paddingBottom="3dp"
+   				 android:background="@android:color/darker_gray"/>
 
-             <EditText
-                 android:id="@+id/ed_zarpl"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:ems="10"
-                 android:hint="@string/zarpl"
-                 android:inputType="number" />
+            <EditText
+                android:id="@+id/ph_number"
+                style="@style/CodeFontEditText.phone"
+                android:hint="@string/ph_number" >
+            </EditText>
+            <View
+   				 android:layout_width="fill_parent"
+   				 android:layout_height="1dp"
+   				 android:paddingTop="3dp"
+   				 android:paddingBottom="3dp"
+   				 android:background="@android:color/darker_gray"/>
 
-             <EditText
-                 android:id="@+id/ph_number"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:ems="10"
-                 android:hint="@string/ph_number"
-                 android:inputType="phone" >
-             </EditText>
+            <EditText
+                android:id="@+id/ed_mail"
+				style="@style/CodeFontEditText.mail"
+                android:hint="@string/email" />
+            <View
+   				 android:layout_width="fill_parent"
+   				 android:layout_height="2dp"
+   				 android:paddingTop="3dp"
+   				 android:paddingBottom="3dp"
+   				 android:background="@android:color/darker_gray"/>
 
-             <EditText
-                 android:id="@+id/ed_mail"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:ems="10"
-                 android:hint="@string/email"
-                 android:inputType="textEmailAddress" />
-
-             <Button
-                 android:id="@+id/sendres"
-                 android:layout_width="fill_parent"
-                 android:layout_height="wrap_content"
-                 android:text="@string/sendresume"
-                 android:textStyle="bold" />
-            
+            <Button
+                android:id="@+id/sendres"
+                style="@style/ButtonText"
+                android:background="@drawable/btn_green"
+                android:text="@string/sendresume" >
+            </Button>
         </LinearLayout>
     </ScrollView>
 

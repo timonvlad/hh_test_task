@@ -7,9 +7,13 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,26 +24,36 @@ public class Activity01 extends Activity {
 	 Button send_res;
 	 EditText ed_name, ed_dolzh, ed_zarpl, ed_phone, ed_mail;
 	 DatePicker datepc;
+	 ScrollView scr;
+	 TextView tv1,tv2,tv3;
 	 String name, data, male, dolzh, zarpl, phone, mail;
 	 Dialog dialog;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.act01);
 		
-		Toast.makeText(getApplicationContext(), getResources().getString(R.string.hello) , Toast.LENGTH_SHORT).show();
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		
+		setContentView(R.layout.act01);
+
+		scr = (ScrollView) findViewById(R.id.scrollView1);
+		
+		tv1 = (TextView) findViewById(R.id.textView1);
 		
 		ed_name = (EditText) findViewById(R.id.fio01);
 		
 		datepc = (DatePicker) findViewById(R.id.datePicker1);
 		
-		
-		
+		tv2 = (TextView) findViewById(R.id.textView2);
 		
 		spinner1 = (Spinner) findViewById(R.id.mafe);
 		spinner1.setPrompt(getResources().getString(R.string.malefe_prompt));
 		spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
+		
+		tv3 = (TextView) findViewById(R.id.TextView01);
 		
 		ed_dolzh = (EditText) findViewById(R.id.ed_dolzh);
 
@@ -66,7 +80,7 @@ public class Activity01 extends Activity {
 				phone = ed_phone.getText().toString();
 				mail = ed_mail.getText().toString();
 				
-				if(!name.equals("") && !dolzh.equals("") && !zarpl.equals("") && !phone.equals("") && !mail.equals("")){
+				if(!name.equals("") && !dolzh.equals("") && !zarpl.equals("") && !phone.equals("") && !mail.equals("") && phone.length()>4){
 					Intent myIntent = new Intent(getApplicationContext(), Activity02.class);
 					myIntent.putExtra("tname",name);
 					myIntent.putExtra("tdata",data);
@@ -76,7 +90,15 @@ public class Activity01 extends Activity {
 					myIntent.putExtra("tphone",phone);
 					myIntent.putExtra("tmail",mail);
 					startActivityForResult(myIntent, 1);
-				}else{
+					overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+				}else if(phone.length()<5 && !phone.equals(""))
+				{
+					ShakeEd();
+					Toast.makeText(getApplicationContext(), getResources().getString(R.string.error3act) , Toast.LENGTH_LONG).show();
+				}
+				
+				else{
+					ShakeEd();
 					Toast.makeText(getApplicationContext(), getResources().getString(R.string.error1act) , Toast.LENGTH_LONG).show();
 				}
 				
@@ -84,8 +106,23 @@ public class Activity01 extends Activity {
 			}
 		});
 		
+		ShakeEd();
+		
+		
+		
 		
 	}
+	
+	
+	protected void ShakeEd(){
+		
+		Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
+		 
+
+		scr.startAnimation(shake);
+		
+	}
+	
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 		  if (requestCode == 1) {
@@ -128,6 +165,9 @@ public class Activity01 extends Activity {
 
 		dialog.show();
 	}
+	
+	
+	
 	
 	@Override
 	protected void onDestroy() {
